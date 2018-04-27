@@ -1,0 +1,30 @@
+{% extends 'dashboard/template.html' %}
+{% block body %}
+{% if queries %}
+<div class="section">
+        <table>
+                <thead>
+                  <tr>
+                      <th>Subject</th>
+                      <th>Status</th>
+                      <th>Last Active</th>
+                      <th>view</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                    {% for query in queries %}
+                  <tr>
+                    <td>{{query.subject}}</td>
+                    <td>{{query.status}}</td>
+                    <td>{{query.lastactivedate}}</td>
+                    <td><a class="waves-effect waves-light btn" href="{% url 'detail' query.id %}">view</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+</div>
+{% else %}
+<div class="row center card card-title deep-orange accent-3">No Queries Yet!</div>
+{% endif %}
+{% endblock %}

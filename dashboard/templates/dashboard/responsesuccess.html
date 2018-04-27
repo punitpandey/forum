@@ -1,0 +1,10 @@
+{% extends 'dashboard/template.html' %}
+{% block body %}
+{% if success %}
+    <div class="center"><h2>
+            Thank You for Your response. We will contact you as soon as possible.
+    </h2></div>
+{% else %}
+    Error in posting Query.
+{% endif %}
+{% endblock %}
